@@ -13,7 +13,7 @@ public class SafeAreaFitter : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
 
-        // 等待当前帧的所有渲染和UI计算结束后再执行
+        //wait renderer
         yield return new WaitForEndOfFrame();
         ApplySafeArea();
     }
