@@ -52,7 +52,7 @@ public class SafeAreaUGUI : MonoBehaviour
 
         await ScreenObserver
             .ObserveScreenChanges(cts.Token)
-            .ForEachAsync(_ => UniTask.Post(ApplySafeAreaImmediate), cts.Token);//线程安全
+            .ForEachAsync(_ => ApplySafeAreaImmediate(), cts.Token);
     }
 
     private void ApplySafeAreaImmediate()
